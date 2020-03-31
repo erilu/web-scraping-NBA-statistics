@@ -7,7 +7,7 @@ March 22, 2020 - [Jupyter Notebook](https://erilu.github.io/web-scraping-NBA-sta
 
 * [Introduction](#Introduction)
 * [Scrape roster information for each NBA team](#Scrape-roster-information-for-each-NBA-team)
-* [Scrape player stats: career averages](#Scrape-player-stats:-career-averages)
+* [Scrape player stats for career averages](#Scrape-player-stats-for-career-averages)
 * [Joining and cleaning the data](#Joining-and-cleaning-the-data)
 * [Calculating statistics](#Calculating-statistics)
 * [Conclusion](#Conclusion)
@@ -320,19 +320,6 @@ gsw
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -632,19 +619,6 @@ all_players_df.head(5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -782,7 +756,7 @@ Now, `all_players_df` is a DataFrame with all the players in the NBA categorized
 all_players_df.to_csv("NBA_roster_info_all_players_mar2020.csv")
 ```
 
-## Scrape player stats: career averages
+## Scrape player stats for career averages
 
 We also want to scrape data coresponding to the performance of each player, in terms of points per game, field goal percentage, rebounds per game, etc. Our goal is to append this information to `all_players_df` so that we can compare player performance with traits such as height, salary, etc. We can find performance stats at each player's personal page on ESPN:
 
@@ -858,19 +832,6 @@ career_stats_df.head(5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1075,19 +1036,6 @@ all_stats_df.head(5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1402,19 +1350,6 @@ mean_df
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2205,19 +2140,6 @@ mean_df.sort_values('salary', ascending=False).head(5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2408,19 +2330,6 @@ all_stats_df.sort_values('salary', ascending=False)[['salary','team']].head(10)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2505,19 +2414,6 @@ top_n(all_stats_df, 'PTS', 5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2567,19 +2463,6 @@ top_n(all_stats_df, 'REB', 5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2629,19 +2512,6 @@ top_n(all_stats_df, 'height', 5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2691,19 +2561,6 @@ top_n(all_stats_df, 'weight', 5)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2849,6 +2706,6 @@ Taking into account these caveats, the value of the slope is ~947619.16. This su
 
 ## Conclusion
 
-Here, I used Python to scrape ESPN for statistics on all the players in the NBA using the `urllib` and `re` packages. Then, I used `pandas` to organize the data and calculate some summary statistics.
+Here, I used Python to scrape ESPN for statistics on all the players in the NBA using the `urllib` and `re` packages. Then, I used `pandas` and `scikit-learn` to organize the data and calculate some summary statistics.
 
 I hope what you've learned from this project will help you out on your own web scraping quests. The techniques that I've outlined here should be broadly applicable for other websites. In general, webpages that link to subpages within the same site will construct their links in some sort of standardized pattern. If so, you can construct URLs for the subpages and loop through them as we have done here. Next time you find yourself flipping through a website and copy-pasting, consider trying to automate the process using Python!
