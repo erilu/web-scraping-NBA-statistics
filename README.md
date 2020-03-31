@@ -3,7 +3,7 @@
 
 Erick Lu
 
-March 22, 2020 - [Jupyter Notebook](https://erilu.github.io/web-scraping-NBA-statistics/)
+March 31, 2020 - [Jupyter Notebook](https://erilu.github.io/web-scraping-NBA-statistics/)
 
 * [Introduction](#Introduction)
 * [Scrape roster information for each NBA team](#Scrape-roster-information-for-each-NBA-team)
