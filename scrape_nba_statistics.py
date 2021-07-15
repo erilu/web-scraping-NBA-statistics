@@ -8,14 +8,14 @@ from itertools import chain
 # This method finds the urls for each of the rosters in the NBA using regexes.
 def build_team_urls():
     # Open the espn teams webpage and extract the names of each roster available.
-    f = urllib.request.urlopen('http://www.espn.com/nba/teams')
+    f = urllib.request.urlopen('https://www.espn.com/nba/teams')
     teams_source = f.read().decode('utf-8')
     teams = dict(re.findall("www\.espn\.com/nba/team/_/name/(\w+)/(.+?)\",", teams_source))
     # Using the names of the rosters, create the urls of each roster
     roster_urls = []
     for key in teams.keys():
         # each roster webpage follows this general pattern.
-        roster_urls.append('http://www.espn.com/nba/team/roster/_/name/' + key + '/' + teams[key])
+        roster_urls.append('https://www.espn.com/nba/team/roster/_/name/' + key + '/' + teams[key])
         teams[key] = str(teams[key])
     return dict(zip(teams.values(), roster_urls))
 
@@ -24,7 +24,7 @@ def get_player_info(roster_url):
     f = urllib.request.urlopen(roster_url)
     roster_source = f.read().decode('utf-8')
     sleep(0.5)
-    player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"http\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
+    player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"https?\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
     player_info = re.findall(player_regex, roster_source)
     player_dict = dict()
     for player in player_info:

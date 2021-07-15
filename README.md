@@ -53,14 +53,14 @@ Now, let’s create a function that will extract all the team names from http://
 # This method finds the urls for each of the rosters in the NBA using regexes.
 def build_team_urls():
     # Open the espn teams webpage and extract the names of each roster available.
-    f = urllib.request.urlopen('http://www.espn.com/nba/teams')
+    f = urllib.request.urlopen('https://www.espn.com/nba/teams')
     teams_source = f.read().decode('utf-8')
     teams = dict(re.findall("www\.espn\.com/nba/team/_/name/(\w+)/(.+?)\",", teams_source))
     # Using the names of the rosters, create the urls of each roster
     roster_urls = []
     for key in teams.keys():
         # each roster webpage follows this general pattern.
-        roster_urls.append('http://www.espn.com/nba/team/roster/_/name/' + key + '/' + teams[key])
+        roster_urls.append('https://www.espn.com/nba/team/roster/_/name/' + key + '/' + teams[key])
         teams[key] = str(teams[key])
     return dict(zip(teams.values(), roster_urls))
 ```
@@ -74,36 +74,36 @@ rosters
 
 
 
-    {'atlanta-hawks': 'http://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks',
-     'boston-celtics': 'http://www.espn.com/nba/team/roster/_/name/bos/boston-celtics',
-     'brooklyn-nets': 'http://www.espn.com/nba/team/roster/_/name/bkn/brooklyn-nets',
-     'charlotte-hornets': 'http://www.espn.com/nba/team/roster/_/name/cha/charlotte-hornets',
-     'chicago-bulls': 'http://www.espn.com/nba/team/roster/_/name/chi/chicago-bulls',
-     'cleveland-cavaliers': 'http://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers',
-     'dallas-mavericks': 'http://www.espn.com/nba/team/roster/_/name/dal/dallas-mavericks',
-     'denver-nuggets': 'http://www.espn.com/nba/team/roster/_/name/den/denver-nuggets',
-     'detroit-pistons': 'http://www.espn.com/nba/team/roster/_/name/det/detroit-pistons',
-     'golden-state-warriors': 'http://www.espn.com/nba/team/roster/_/name/gs/golden-state-warriors',
-     'houston-rockets': 'http://www.espn.com/nba/team/roster/_/name/hou/houston-rockets',
-     'indiana-pacers': 'http://www.espn.com/nba/team/roster/_/name/ind/indiana-pacers',
-     'la-clippers': 'http://www.espn.com/nba/team/roster/_/name/lac/la-clippers',
-     'los-angeles-lakers': 'http://www.espn.com/nba/team/roster/_/name/lal/los-angeles-lakers',
-     'memphis-grizzlies': 'http://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies',
-     'miami-heat': 'http://www.espn.com/nba/team/roster/_/name/mia/miami-heat',
-     'milwaukee-bucks': 'http://www.espn.com/nba/team/roster/_/name/mil/milwaukee-bucks',
-     'minnesota-timberwolves': 'http://www.espn.com/nba/team/roster/_/name/min/minnesota-timberwolves',
-     'new-orleans-pelicans': 'http://www.espn.com/nba/team/roster/_/name/no/new-orleans-pelicans',
-     'new-york-knicks': 'http://www.espn.com/nba/team/roster/_/name/ny/new-york-knicks',
-     'oklahoma-city-thunder': 'http://www.espn.com/nba/team/roster/_/name/okc/oklahoma-city-thunder',
-     'orlando-magic': 'http://www.espn.com/nba/team/roster/_/name/orl/orlando-magic',
-     'philadelphia-76ers': 'http://www.espn.com/nba/team/roster/_/name/phi/philadelphia-76ers',
-     'phoenix-suns': 'http://www.espn.com/nba/team/roster/_/name/phx/phoenix-suns',
-     'portland-trail-blazers': 'http://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers',
-     'sacramento-kings': 'http://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings',
-     'san-antonio-spurs': 'http://www.espn.com/nba/team/roster/_/name/sa/san-antonio-spurs',
-     'toronto-raptors': 'http://www.espn.com/nba/team/roster/_/name/tor/toronto-raptors',
-     'utah-jazz': 'http://www.espn.com/nba/team/roster/_/name/utah/utah-jazz',
-     'washington-wizards': 'http://www.espn.com/nba/team/roster/_/name/wsh/washington-wizards'}
+    {'atlanta-hawks': 'https://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks',
+     'boston-celtics': 'https://www.espn.com/nba/team/roster/_/name/bos/boston-celtics',
+     'brooklyn-nets': 'https://www.espn.com/nba/team/roster/_/name/bkn/brooklyn-nets',
+     'charlotte-hornets': 'https://www.espn.com/nba/team/roster/_/name/cha/charlotte-hornets',
+     'chicago-bulls': 'https://www.espn.com/nba/team/roster/_/name/chi/chicago-bulls',
+     'cleveland-cavaliers': 'https://www.espn.com/nba/team/roster/_/name/cle/cleveland-cavaliers',
+     'dallas-mavericks': 'https://www.espn.com/nba/team/roster/_/name/dal/dallas-mavericks',
+     'denver-nuggets': 'https://www.espn.com/nba/team/roster/_/name/den/denver-nuggets',
+     'detroit-pistons': 'https://www.espn.com/nba/team/roster/_/name/det/detroit-pistons',
+     'golden-state-warriors': 'https://www.espn.com/nba/team/roster/_/name/gs/golden-state-warriors',
+     'houston-rockets': 'https://www.espn.com/nba/team/roster/_/name/hou/houston-rockets',
+     'indiana-pacers': 'https://www.espn.com/nba/team/roster/_/name/ind/indiana-pacers',
+     'la-clippers': 'https://www.espn.com/nba/team/roster/_/name/lac/la-clippers',
+     'los-angeles-lakers': 'https://www.espn.com/nba/team/roster/_/name/lal/los-angeles-lakers',
+     'memphis-grizzlies': 'https://www.espn.com/nba/team/roster/_/name/mem/memphis-grizzlies',
+     'miami-heat': 'https://www.espn.com/nba/team/roster/_/name/mia/miami-heat',
+     'milwaukee-bucks': 'https://www.espn.com/nba/team/roster/_/name/mil/milwaukee-bucks',
+     'minnesota-timberwolves': 'https://www.espn.com/nba/team/roster/_/name/min/minnesota-timberwolves',
+     'new-orleans-pelicans': 'https://www.espn.com/nba/team/roster/_/name/no/new-orleans-pelicans',
+     'new-york-knicks': 'https://www.espn.com/nba/team/roster/_/name/ny/new-york-knicks',
+     'oklahoma-city-thunder': 'https://www.espn.com/nba/team/roster/_/name/okc/oklahoma-city-thunder',
+     'orlando-magic': 'https://www.espn.com/nba/team/roster/_/name/orl/orlando-magic',
+     'philadelphia-76ers': 'https://www.espn.com/nba/team/roster/_/name/phi/philadelphia-76ers',
+     'phoenix-suns': 'https://www.espn.com/nba/team/roster/_/name/phx/phoenix-suns',
+     'portland-trail-blazers': 'https://www.espn.com/nba/team/roster/_/name/por/portland-trail-blazers',
+     'sacramento-kings': 'https://www.espn.com/nba/team/roster/_/name/sac/sacramento-kings',
+     'san-antonio-spurs': 'https://www.espn.com/nba/team/roster/_/name/sa/san-antonio-spurs',
+     'toronto-raptors': 'https://www.espn.com/nba/team/roster/_/name/tor/toronto-raptors',
+     'utah-jazz': 'https://www.espn.com/nba/team/roster/_/name/utah/utah-jazz',
+     'washington-wizards': 'https://www.espn.com/nba/team/roster/_/name/wsh/washington-wizards'}
 
 
 
@@ -130,7 +130,7 @@ Then, we construct the regex that will return information for each of the player
 
 
 ```python
-player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"http\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
+player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"https?\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
 player_regex
 player_info = re.findall(player_regex, roster_source)
 player_info[0:4]
@@ -188,7 +188,7 @@ def get_player_info(roster_url):
     f = urllib.request.urlopen(roster_url)
     roster_source = f.read().decode('utf-8')
     sleep(0.5)
-    player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"http\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
+    player_regex = ('\{\"name\"\:\"(\w+\s\w+)\",\"href\"\:\"https?\://www\.espn\.com/nba/player/.*?\",(.*?)\}')
     player_info = re.findall(player_regex, roster_source)
     player_dict = dict()
     for player in player_info:
